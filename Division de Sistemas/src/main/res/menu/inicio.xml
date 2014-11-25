@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.divisist.divisist.divisiondesistemas.Inicio" >
+
+    <item android:id="@+id/About"
+        android:icon="@drawable/ic_action_about"
+        android:title="@string/About"
+        android:showAsAction="ifRoom"
+        />
+
+</menu>

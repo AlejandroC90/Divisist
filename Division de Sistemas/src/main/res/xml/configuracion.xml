@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <PreferenceCategory
+        android:title="Almacenamiento"
+        android:key="pref_key_storage_settings">
+    <CheckBoxPreference
+        android:key="guardar_datos"
+        android:title="@string/almacenar"
+        android:checked="false"
+        android:defaultValue="false" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="Revisión Automática"
+        android:key="categoria_de_revision"
+        android:enabled="true">
+
+    <CheckBoxPreference
+        android:key="revisar_notas_automaticamente"
+        android:title="Revisar notas automaticamente"
+        android:checked="false"
+        android:defaultValue="false" />
+
+    <ListPreference
+        android:key="lista_tiempos"
+        android:title="Tiempo"
+        android:summary="Tiempo entre cada revisión de notas"
+        android:entries="@array/tiempos"
+        android:entryValues="@array/valores_tiempos"/>
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Notas UFPS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="informacionapp">Aplicación actualmente desarrollada por Holman Calderón</string>
+    <string name="perfil">Perfil de Google+</string>
+    <string name="About">Acerca de</string>
+    <string name="Conf">Configuración</string>
+
+    <string name="almacenar">Almacenar Datos</string>
+
+
+
+    <string-array name="arreglo_menulateral">
+        <item>Notas</item>
+        <item>Horario</item>
+        <item>Estado</item>
+
+    </string-array>
+</resources>
