@@ -14,6 +14,7 @@
     </PreferenceCategory>
 
 
+    <!--
     <PreferenceCategory
         android:title="Revisión Automática"
         android:key="categoria_de_revision"
@@ -33,5 +34,6 @@
         android:entryValues="@array/valores_tiempos"/>
     </PreferenceCategory>
 
+-->
 
 </PreferenceScreen>

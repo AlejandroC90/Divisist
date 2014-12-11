@@ -20,13 +20,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".acerca_de" />
+        <activity android:name=".acerca_de"
+            android:label="@string/About"/>
         <activity android:name=".Informacion"
             android:screenOrientation="landscape"
+
             android:parentActivityName=".Inicio"
             />
         <activity android:name=".Configuraciones"
             android:label="Configuraciones"></activity>
+        <activity android:name=".calculadora_notas"
+            android:screenOrientation="portrait"
+
+            android:label="@string/calculadora"
+            />
         <activity
             android:name=".activity_settings"
             android:label="@string/title_activity_activity_settings" >

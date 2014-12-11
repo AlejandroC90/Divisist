@@ -12,6 +12,11 @@
     <string name="almacenar">Almacenar Datos</string>
 
 
+    <string name="calculadora">Calculadora de Notas</string>
+    <string name="p1">1er Previo</string>
+    <string name="p2">2do Previo</string>
+    <string name="p3">3er Previo</string>
+    <string name="exa">Ex Final</string>
 
     <string-array name="arreglo_menulateral">
         <item>Notas</item>

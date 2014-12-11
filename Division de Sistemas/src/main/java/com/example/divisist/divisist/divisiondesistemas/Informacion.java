@@ -214,6 +214,12 @@ public class Informacion extends Activity implements SharedPreferences.OnSharedP
                     seMuestra = true;
                     return true;
                 }
+
+
+            case R.id.Cal:
+                Intent k = new Intent(this,calculadora_notas.class);
+                startActivity(k);
+                return true;
         }
 
         return false;

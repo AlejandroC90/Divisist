@@ -13,7 +13,9 @@
         android:showAsAction="always"
 
     />
-
+    <item android:id="@+id/Cal"
+        android:title= "@string/calculadora"
+        />
     <item android:id="@+id/action_search"
 
         android:title="@string/Conf"/>

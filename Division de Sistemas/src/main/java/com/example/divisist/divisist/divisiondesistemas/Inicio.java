@@ -244,6 +244,11 @@ public class Inicio extends Activity {
                 Intent i = new Intent(this,acerca_de.class);
                 startActivity(i);
                 return true;
+
+            case R.id.Cal:
+                Intent j = new Intent(this,calculadora_notas.class);
+                startActivity(j);
+                return true;
         }
         return false;
     }
