@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pre-dex-items>
+<items version="2" >
 
     <item
-        dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/classes-5218fcb1f4732f05377229a0a2f29ded82cd3422.jar"
-        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.github.markushi/circlebutton/1.1/classes.jar"
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/libs/jsoup-1.8.1.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="ebe3b1f14fa79ba3cd1588acda4e6517ee9fe611"/>
+        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/jsoup-1.8.1-38ee49efbcf2ec7faeb3f344b4cb6ae20e5995cf.jar" />
+    </item>
 
-</pre-dex-items>
+</items>

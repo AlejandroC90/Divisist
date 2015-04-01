@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ufpsinletras"
+        android:icon="@drawable/logomaterialblancogrande"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -24,6 +24,11 @@
             android:label="@string/About"/>
         <activity android:name=".Informacion"
             android:screenOrientation="landscape"
+
+            android:parentActivityName=".Inicio"
+            />
+        <activity android:name=".InformacionCards"
+            android:screenOrientation="portrait"
 
             android:parentActivityName=".Inicio"
             />

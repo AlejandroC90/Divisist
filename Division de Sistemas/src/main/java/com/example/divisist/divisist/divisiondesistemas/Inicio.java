@@ -267,7 +267,7 @@ public class Inicio extends Activity {
         protected void onPreExecute() {
 
 
-            Toast.makeText(getApplicationContext(), "Iniciando Sesión...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Iniciando Sesión", Toast.LENGTH_SHORT).show();
 
 
         }
@@ -292,6 +292,7 @@ public class Inicio extends Activity {
             }catch (Exception e){
 
                 Toast.makeText(getApplicationContext(), "Se ha producido un error, reintente", Toast.LENGTH_SHORT).show();
+
                 peticionPOST.setEnabled(true);
                 textoCodigo.setEnabled(true);
                 textoContraseña.setEnabled(true);
@@ -312,7 +313,7 @@ public class Inicio extends Activity {
             }
 
             Intent notas = new Intent();
-            notas.setClass(getApplicationContext(),Informacion.class);
+            notas.setClass(getApplicationContext(),InformacionCards.class);
             notas.putExtra("pagina", TablaMaterias);
             notas.putExtra("codigo", codigoEstudiante);
             notas.putExtra("nombre", nombreEstudiante);
@@ -455,13 +456,14 @@ public class Inicio extends Activity {
     }
 
     public String nombre () {
-        int i = 1258;
-        int j = 1258;
+        int i = 1799;
+        int j = 1799;
         boolean finalNombre=false;
         char a=' ';
+       // return paginaWebdeNotas.substring(i,j);
 
 
-        while(finalNombre!=true){
+     while(finalNombre!=true){
 
             a = paginaWebdeNotas.charAt(j);
             if(String.valueOf(a).equalsIgnoreCase("<")){
