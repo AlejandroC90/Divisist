@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/Cal"
+        android:title= "@string/calculadora"
+        />
+    <item android:id="@+id/action_search"
+
+        android:title="@string/Conf"/>
+    <item android:id="@+id/cerrar"
+        android:title= "@string/cerrar_session"
+        />
+
+
+    <item android:id="@+id/About"
+
+        android:title="@string/About"
+        />
+
+
+</menu>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Notas UFPS</string>
+    <string name="About">Acerca De</string>
+    <string name="Conf">Configuración</string>
+    <string name="calculadora">Calculadora de Notas</string>
+    <string name="def">Definitiva</string>
+    <string name="exa">Examen Final</string>
+    <string name="hint_codigo">Código</string>
+    <string name="hint_contrasena">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="perfil">Perfil de Google+</string>
+    <string name="reiniciar">Reiniciar</string>
+    <string name="p1">1er Previo</string>
+    <string name="p2">2do Previo</string>
+    <string name="p3">3er Previo</string>
+    <string name="informacionapp">Aplicación actualmente desarrollada por Holman Calderón</string>
+    <string name="almacenar">Almacenar Datos</string>
+    <string name="correo">Correo</string>
+    <string name="error_app">Se ha producido un error, reintente</string>
+    <string name="espacio_vacio">Espacio vacío, no se puede continuar</string>
+    <string name="iniciando_sesion">Iniciando Sesión</string>
+    <string name="notas">Notas</string>
+    <string name="horario">Horario</string>
+    <string name="cerrar_session">Cerrar Sesión</string>
+</resources>
