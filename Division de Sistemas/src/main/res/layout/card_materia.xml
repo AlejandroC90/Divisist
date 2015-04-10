@@ -1,50 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="310dp"
     android:layout_height="wrap_content"
-
+    android:layout_gravity="center"
     android:paddingLeft="15dp"
     android:paddingTop="15dp"
     android:paddingBottom="15dp"
     android:paddingRight="15dp"
+
     android:background="@drawable/selector_card_background"
     android:descendantFocusability="afterDescendants">
 
 
 
-
     <LinearLayout
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/border">
         <TextView
-            android:text="Nombre Materiaaasaasa"
+            android:text="Nombre "
             android:textSize="20dp"
+            android:paddingRight="10dp"
             android:maxWidth="200dp"
             android:id="@+id/nombreM"
+            android:paddingBottom="20dp"
             android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            />
 
 
         <!--   android:id="@+id/card_main_inner_simple_title"
 
           -->
-
-
-
-
         <TextView
             android:text="4.5"
-            android:width="50dp"
-            android:textSize="25dp"
+
+            android:width="70dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="0dp"
+            android:textSize="26dp"
             android:textStyle="bold"
-            android:gravity="center"
+            android:gravity="right"
             android:layout_marginRight="20dp"
             android:layout_gravity="right"
             android:id="@+id/notaDef"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_izq"/>
 
     </LinearLayout>
 
@@ -52,23 +56,29 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:background="#000"
+
         />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="0dp">
 
         <LinearLayout
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="left"
+            android:gravity="center"
+
+            >
             <TextView
                 android:text="PP"
                 android:textSize="15dp"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
 
                 android:id="@+id/card_main_inner_simple_title4"
                 android:layout_marginLeft="10dp"
@@ -77,8 +87,8 @@
             <TextView
                 android:text="2.5"
                 android:textSize="20dp"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:id="@+id/notaPP"
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
@@ -87,14 +97,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/border_izq">
 
             <TextView
                 android:text="SP"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:textSize="15dp"
                 android:id="@+id/card_main_inner_simple_titl3e"
                 android:layout_marginLeft="10dp"
@@ -104,8 +115,8 @@
             <TextView
                 android:text="4"
                 android:textSize="20dp"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:id="@+id/notaSP"
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
@@ -113,13 +124,14 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/border_izq">
             <TextView
                 android:text="TP"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:textSize="15dp"
                 android:id="@+id/card_main_inner_simple_titl5"
                 android:layout_marginLeft="10dp"
@@ -128,8 +140,8 @@
 
             <TextView
                 android:text="3"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:textSize="20dp"
                 android:id="@+id/notaTP"
                 android:layout_marginLeft="10dp"
@@ -141,10 +153,11 @@
 
 
         <LinearLayout
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
+            android:background="@drawable/border_izq"
             >
 
 
@@ -154,8 +167,8 @@
                 android:textSize="15dp"
                 android:id="@+id/card_main_inner_simple_tit6e"
                 android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -164,18 +177,19 @@
                 android:textSize="20dp"
                 android:id="@+id/notaEX"
                 android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
 
         </LinearLayout>
         <LinearLayout
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
+            android:background="@drawable/border_izq"
             >
 
 
@@ -185,8 +199,8 @@
                 android:textSize="15dp"
                 android:id="@+id/card_main_inner_simple_tit26e"
                 android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -195,8 +209,8 @@
                 android:textSize="20dp"
                 android:id="@+id/notaHA"
                 android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

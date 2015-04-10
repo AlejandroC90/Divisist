@@ -207,56 +207,6 @@ public class calculadora_notas extends Activity {
             }
         });
 
-        def.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-                    try {
-
-                        if(def.getText().toString().equals("")){
-                            de=0.0;
-                            return;
-                        }
-                        de = Double.valueOf(def.getText().toString());
-                        if (de > 5.0) {
-                            de = 0.0;
-                            def.setText("");
-                            Toast.makeText(getApplicationContext(), "La definitiva no puede ser mayor que 5", Toast.LENGTH_SHORT).show();
-
-                            return;
-                        }
-
-                        if (ex == 0 && p1 != 0 && p2 != 0 && p3 != 0) {
-                        exa.setText("");
-                        calcularExamen();
-                        }
-
-                        if (ex ==0 && p1 ==0 && p2==0 && p3 ==0){
-                        p1 = de;
-                        p2 = de;
-                        p3 = de;
-                        ex = de;
-
-                        calcularTodo();
-                        }
-
-                }catch (Exception e){
-                    return;
-                }
-
-
-            }
-        });
 
 
     }

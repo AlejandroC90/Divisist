@@ -2,15 +2,30 @@
 <resources>
 
     <string name="app_name">Notas UFPS</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="Conf">Configuración</string>
+
+    <!--Strings de Actividad de Inicio                          -->
+    <string name="hint_codigo">Código</string>
+    <string name="hint_contrasena">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+
+
+    <!--Strings de la Actividad Acerca de -->
+
     <string name="informacionapp">Aplicación actualmente desarrollada por Holman Calderón</string>
     <string name="perfil">Perfil de Google+</string>
     <string name="About">Acerca de</string>
-    <string name="Conf">Configuración</string>
+    <string name="correo">Correo</string>
+
+   <!-- Toasts -->
+    <string name="error_app">Se ha producido un error, reintente</string>
+    <string name="espacio_vacio">Espacio vacío, no se puede continuar</string>
+    <string name="iniciando_sesion">Iniciando Sesión</string>
 
     <string name="almacenar">Almacenar Datos</string>
 
+    <string name="notas">Notas</string>
+    <string name="horario">Horario</string>
 
     <string name="calculadora">Calculadora de Notas</string>
     <string name="p1">1er Previo</string>
@@ -19,15 +34,6 @@
     <string name="exa">Ex Final</string>
     <string name="def">Definitiva</string>
     <string name="reiniciar">Reiniciar</string>
-    <string-array name="arreglo_menulateral">
-        <item>Notas</item>
-        <item>Horario</item>
-        <item>Estado</item>
-
-    </string-array>
-
-
-
-
+    <string name="cerrar_session">Cerrar Sesión</string>
 
 </resources>

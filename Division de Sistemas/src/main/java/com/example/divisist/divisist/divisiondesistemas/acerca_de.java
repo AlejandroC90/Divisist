@@ -2,7 +2,6 @@ package com.example.divisist.divisist.divisiondesistemas;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -64,7 +63,7 @@ public class acerca_de extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.acerca_de, menu);
+        getMenuInflater().inflate(R.menu.pestanas, menu);
 
 
         return true;

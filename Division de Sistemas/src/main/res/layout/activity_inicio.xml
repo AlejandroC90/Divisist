@@ -45,7 +45,7 @@
             android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_email"
+            android:hint="@string/hint_codigo"
             android:textColorHint="#FFFF4444"
             android:inputType="number"/>
 
@@ -55,12 +55,12 @@
             android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_password"
+            android:hint="@string/hint_contrasena"
             android:password="true"
             android:textColorHint="#FFFF4444"
 
-            android:imeActionLabel="@string/action_sign_in_short"
-            android:imeActionId="@+id/login"
+
+
             android:imeOptions="actionUnspecified" />
 
 
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/sesion2"
+            android:text="@string/iniciar_sesion"
 
             android:paddingLeft="32dp"
             android:paddingRight="32dp"

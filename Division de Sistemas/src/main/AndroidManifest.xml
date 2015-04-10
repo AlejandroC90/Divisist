@@ -39,10 +39,11 @@
 
             android:label="@string/calculadora"
             />
-        <activity
-            android:name=".activity_settings"
-            android:label="@string/title_activity_activity_settings" >
-        </activity>
+
+        <activity android:name=".InformacionenPestanas"
+
+
+            />
     </application>
 
 </manifest>

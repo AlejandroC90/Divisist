@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Notes UFPS</string>
+    <string name="About">About</string>
+    <string name="Conf">Settings</string>
+
+    <string name="calculadora">Notes Calculator</string>
+    <string name="def">Definitive</string>
+    <string name="exa">Final Exam</string>
+    <string name="hint_codigo">Code</string>
+    <string name="hint_contrasena">Password</string>
+    <string name="informacionapp">App curently developed by Holman Calderón</string>
+    <string name="iniciar_sesion">Log in</string>
+    <string name="perfil">Google+ Profile</string>
+    <string name="reiniciar">Restart</string>
+    <string name="p1">1st Exam</string>
+    <string name="p2">2nd Exam</string>
+    <string name="p3">3rd Exam</string>
+    <string name="almacenar">Save Data</string>
+    <string name="correo">Email</string>
+    <string name="error_app">An error has ocurred</string>
+    <string name="espacio_vacio">Empty space, can\'t continue</string>
+    <string name="iniciando_sesion">Logging in</string>
+    <string name="notas">Notes</string>
+    <string name="horario">Horario</string>
+    <string name="cerrar_session">Log out</string>
+</resources>

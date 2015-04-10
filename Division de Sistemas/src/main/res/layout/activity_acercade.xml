@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="25dp"
-        android:text="Correo"
+        android:text="@string/correo"
         android:textSize="15dp"
         android:layout_gravity="center"
         android:id="@+id/textView" />

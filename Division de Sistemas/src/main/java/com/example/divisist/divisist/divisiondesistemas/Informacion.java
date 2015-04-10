@@ -201,9 +201,9 @@ public class Informacion extends Activity implements SharedPreferences.OnSharedP
                 this.finish();
                 return true;
 
-            case R.id.cambiar:
+         /**   case R.id.cambiar:
                 if(seMuestra==true){
-                    this.navegador.loadData(tablaHorario,"text/html",null);
+                    this.navegador.loadData(tablaHorario,"text/html",null);s
                     setTitle(nombreEs + " - " + codigoEs + " - HORARIO");
                    seMuestra=false;
                     return true;
@@ -214,7 +214,7 @@ public class Informacion extends Activity implements SharedPreferences.OnSharedP
                     seMuestra = true;
                     return true;
                 }
-
+*/
 
             case R.id.Cal:
                 Intent k = new Intent(this,calculadora_notas.class);

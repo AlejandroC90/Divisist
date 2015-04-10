@@ -2,11 +2,46 @@
 <items version="2" >
 
     <item
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-3e46c45bc8534dd54cd37588d8c801af6ffc57e5.jar" />
+    </item>
+    <item
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/support-v13/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="7f9cca1caa023a880b00c382bcc5c90245ae4895">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/classes-f0b8c892b57ed9194bfc32e031b917c444363272.jar" />
+    </item>
+    <item
+        jar="/home/alejandro/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-afce3ff730284c21d8a597dc1c0e849d38e95068.jar" />
+    </item>
+    <item
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/support-v13/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="def3eff2b7b4774d96ae15b07b3fc0111edbfe24">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-d93c5056013fb0e54f73bef98230c75312419c09.jar" />
+    </item>
+    <item
         jar="/home/alejandro/workspace/Divisist/Division de Sistemas/libs/jsoup-1.8.1.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
         <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/jsoup-1.8.1-38ee49efbcf2ec7faeb3f344b4cb6ae20e5995cf.jar" />
+    </item>
+    <item
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/classes-04193af265f931634dc64d99f5452462e871cc70.jar" />
     </item>
 
 </items>

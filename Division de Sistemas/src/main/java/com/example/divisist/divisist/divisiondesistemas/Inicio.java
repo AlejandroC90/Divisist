@@ -132,7 +132,7 @@ public class Inicio extends Activity {
                 //falta revisar que el codigo tenga un tamaño fijo y la contraseña también
                 if(valorcontraseña.isEmpty()||valorcodigo.isEmpty()){
 
-                    Toast.makeText(getApplicationContext(), "Espacio vacío, no se puede continuar", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.espacio_vacio, Toast.LENGTH_SHORT).show();
 
                     //como hay un espacio vacio o el codigo no esta completo vuelvo a activar los botones y me regreso
                     peticionPOST.setEnabled(true);
@@ -154,7 +154,7 @@ public class Inicio extends Activity {
                     peticionPOST.setEnabled(true);
                     textoContraseña.setEnabled(true);
                     textoCodigo.setEnabled(true);
-                    Toast.makeText(getApplicationContext(), "Se ha producido un error en Excepcion, reintente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.error_app, Toast.LENGTH_SHORT).show();
 
                     return;
 
@@ -267,7 +267,7 @@ public class Inicio extends Activity {
         protected void onPreExecute() {
 
 
-            Toast.makeText(getApplicationContext(), "Iniciando Sesión", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.iniciando_sesion, Toast.LENGTH_SHORT).show();
 
 
         }
@@ -291,7 +291,7 @@ public class Inicio extends Activity {
                  sacarNombreNotas();
             }catch (Exception e){
 
-                Toast.makeText(getApplicationContext(), "Se ha producido un error, reintente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.error_app, Toast.LENGTH_SHORT).show();
 
                 peticionPOST.setEnabled(true);
                 textoCodigo.setEnabled(true);
@@ -302,7 +302,7 @@ public class Inicio extends Activity {
 
 
             if(nombreEstudiante==null||nombreEstudiante.equals("")){
-                Toast.makeText(getApplicationContext(), "Se ha producido un error, reintente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.error_app, Toast.LENGTH_SHORT).show();
                 peticionPOST.setEnabled(true);
                 textoCodigo.setEnabled(true);
                 textoContraseña.setEnabled(true);
@@ -313,7 +313,7 @@ public class Inicio extends Activity {
             }
 
             Intent notas = new Intent();
-            notas.setClass(getApplicationContext(),InformacionCards.class);
+            notas.setClass(getApplicationContext(),InformacionenPestanas.class);
             notas.putExtra("pagina", TablaMaterias);
             notas.putExtra("codigo", codigoEstudiante);
             notas.putExtra("nombre", nombreEstudiante);

@@ -7,7 +7,6 @@
 
 
 
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
 
@@ -20,7 +19,9 @@
     tools:context="com.example.divisist.divisist.divisiondesistemas.Informacion">
 
 
-    <WebView
+
+
+        <WebView
         android:id="@+id/navegador"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
