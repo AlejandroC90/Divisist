@@ -3,6 +3,8 @@ package com.example.divisist.divisist.divisiondesistemas;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ListView;
 
@@ -16,7 +18,7 @@ import org.jsoup.select.Elements;
 /**
  * Created by alejandro on 31/03/15.
  */
-public class InformacionCards extends Activity implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class InformacionCards extends ActionBarActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
 
 
     private String tablaNotas;
@@ -26,12 +28,12 @@ public class InformacionCards extends Activity implements SharedPreferences.OnSh
 
     private String nombreEs;
     private String codigoEs;
+    private Toolbar toolbar;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.informacion_cards);
-
 
         ListView list = (ListView)findViewById(R.id.list_view);
 
@@ -78,4 +80,6 @@ public class InformacionCards extends Activity implements SharedPreferences.OnSh
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
 
     }
+
+
 }

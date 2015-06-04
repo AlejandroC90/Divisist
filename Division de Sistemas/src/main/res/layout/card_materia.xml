@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="310dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:gravity="center"
     android:paddingLeft="15dp"
     android:paddingTop="15dp"
     android:paddingBottom="15dp"
@@ -19,10 +20,10 @@
         android:orientation="horizontal"
         android:background="@drawable/border">
         <TextView
-            android:text="Nombre "
+            android:text="Nombre de la Materia"
             android:textSize="20dp"
             android:paddingRight="10dp"
-            android:maxWidth="200dp"
+            android:maxWidth="400dp"
             android:id="@+id/nombreM"
             android:paddingBottom="20dp"
             android:layout_marginLeft="10dp"

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 //import android.support.v4.app.NotificationCompat;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
@@ -29,7 +30,7 @@ public class Informacion extends Activity implements SharedPreferences.OnSharedP
     //variables menu lateral
 
     private ListView navList;
-
+    private Toolbar toolbar;
 
 
     @Override

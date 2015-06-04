@@ -3,6 +3,7 @@ package com.example.divisist.divisist.divisiondesistemas;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -12,12 +13,16 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.internal.widget.AdapterViewCompat;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -46,6 +51,7 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
      * time.
      */
     ViewPager mViewPager;
+    private Toolbar toolbar;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,6 +109,7 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
     }
 
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -143,6 +150,7 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
             case R.id.cerrar:
                 Toast.makeText(getApplicationContext(), "Sesión Cerrada", Toast.LENGTH_SHORT).show();
                 this.finish();
+
                 return true;
 
 
@@ -202,7 +210,7 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
         }
     }
 
-    public   static class FragmentNotas extends android.support.v4.app.Fragment{
+    public   static class FragmentNotas extends android.support.v4.app.Fragment {
 
 
         public FragmentNotas(){
@@ -217,8 +225,8 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
 
 
 
-
             ListView list = (ListView) rootView.findViewById(R.id.list_view);
+
 
           //  list.addHeaderView(new View(this));
            // list.addFooterView(new View(this));
@@ -236,6 +244,7 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
             for(int i = 2;i < tam ;i++){
                 Elements data = rows.get(i).getElementsByTag("td");
 
+
                 CardItemData lineas = new CardItemData(data.get(1).text(),data.get(5).text(),data.get(6).text(),data.get(7).text(),data.get(8).text(),data.get(9).text(),data.get(11).text());
                 adapter.addItem(lineas, false);
 
@@ -243,8 +252,20 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
 
             list.setAdapter(adapter);
 
+
+
             return rootView;
+
+
+
+
+
+
         }
+
+
+
+
 
     }
 

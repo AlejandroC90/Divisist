@@ -21,8 +21,9 @@
             android:gravity="right"
             android:paddingRight="10dp"
             android:layout_gravity="right"
+            android:textStyle="bold"
             android:text="2.0"
-            android:textSize="30dp"/>
+            android:textSize="35dp"/>
 
     </LinearLayout>
 
@@ -32,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
+        android:orientation="vertical"
         android:paddingTop="20dp">
 
         <LinearLayout
@@ -50,6 +52,27 @@
                 android:gravity="right"
                 android:layout_gravity="right"
                 android:text="2.0"
+                android:paddingRight="30dp"
+                android:textSize="25dp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Segundo Previo"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:text="4.0"
                 android:paddingRight="30dp"
                 android:textSize="25dp"/>
         </LinearLayout>

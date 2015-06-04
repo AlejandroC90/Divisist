@@ -1,14 +1,18 @@
 package com.example.divisist.divisist.divisiondesistemas;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,7 +35,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Inicio extends Activity {
+public  class Inicio extends Activity {
 
     //el botón de iniciar sesión
     private  Button peticionPOST;
@@ -55,6 +59,12 @@ public class Inicio extends Activity {
     public  String paginaWebdeNotas;
     public String paginaWebdeHorario;
 
+    private ProgressDialog cargando;
+    private Context context;
+
+    private Toolbar toolbar;
+
+
 
     //la URL a la que se conecta la app
     String urlDivisist ="http://divisist.ufps.edu.co/index.php";
@@ -64,12 +74,18 @@ public class Inicio extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_inicio);
 
+
+        context = this;
         //inicializo los datos del estudiante
         this.paginaWebdeNotas ="";
         this.valorcodigo="";
         this.valorcontraseña="";
+
+
+
 
         //inicializo el botón de iniciar sesión
         this.peticionPOST = (Button) findViewById(R.id.peticionPOST);
@@ -101,6 +117,7 @@ public class Inicio extends Activity {
             //por ultimo ejecuto el hilo de buscar las Notas
             BuscarNotas notasaqui2 = new BuscarNotas(Inicio.this);
             notasaqui2.execute();
+
 
 
 
@@ -267,7 +284,17 @@ public class Inicio extends Activity {
         protected void onPreExecute() {
 
 
-            Toast.makeText(getApplicationContext(), R.string.iniciando_sesion, Toast.LENGTH_SHORT).show();
+          //  setProgressBarIndeterminateVisibility(true);
+
+            cargando = new ProgressDialog(context);
+            cargando.setTitle(R.string.iniciando_sesion);
+
+            cargando.setMessage("Por favor espere");
+            cargando.setCancelable(false);
+            cargando.setIndeterminate(true);
+            cargando.show();
+
+            //Toast.makeText(getApplicationContext(), R.string.iniciando_sesion, Toast.LENGTH_SHORT).show();
 
 
         }
@@ -285,6 +312,8 @@ public class Inicio extends Activity {
         //metodo que se llama despues que se ejecuta el hilo
         protected void onPostExecute(Void a) {
 
+          //  setProgressBarIndeterminateVisibility(false);
+
             //se toma la pagina web y se sacan las notas
 
             try {
@@ -296,6 +325,7 @@ public class Inicio extends Activity {
                 peticionPOST.setEnabled(true);
                 textoCodigo.setEnabled(true);
                 textoContraseña.setEnabled(true);
+                cargando.dismiss();
 
                 return;
             }
@@ -308,12 +338,14 @@ public class Inicio extends Activity {
                 textoContraseña.setEnabled(true);
                 valorcodigo="";
                 valorcontraseña="";
+                cargando.dismiss();
 
                 return;
             }
 
+
             Intent notas = new Intent();
-            notas.setClass(getApplicationContext(),InformacionenPestanas.class);
+            notas.setClass(getApplicationContext(), InformacionenPestanas.class);
             notas.putExtra("pagina", TablaMaterias);
             notas.putExtra("codigo", codigoEstudiante);
             notas.putExtra("nombre", nombreEstudiante);
@@ -321,6 +353,7 @@ public class Inicio extends Activity {
             notas.putExtra("horario", tablaHorario);
             startActivity(notas);
 
+            cargando.dismiss();
 
         }
     }
@@ -331,6 +364,7 @@ public class Inicio extends Activity {
     public void peticionPostyGet(){
 
         HttpClient httpclient = new DefaultHttpClient();
+
 
         String html;
 

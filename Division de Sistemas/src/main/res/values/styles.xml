@@ -46,4 +46,20 @@
 
 
     </style>
+
+    <!-- your theme inherits from the material theme -->
+    <style name="MaterialVersion1Nomenorque21" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- theme customizations -->
+    </style>
+
+    <style name="MaterialDivisit" parent="AppTheme.Base"/>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+
 </resources>
