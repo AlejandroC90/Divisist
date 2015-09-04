@@ -2,18 +2,25 @@
 <items version="2" >
 
     <item
-        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/classes-474200b8bb4d38c5cc0c253862dfe47e8c59a53e.jar" />
-    </item>
-    <item
-        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
         jumboMode="false"
         revision="22.0.0"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-17c6ec275c25be1ed116fa4126d70b96ea650ac9.jar" />
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/classes-eb750c48cfd47bffe7067b34698aa735bac59dae.jar" />
+    </item>
+    <item
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/classes-947b7b1dc53bf8535e8cc3a69ab37f90d78d17e1.jar" />
+    </item>
+    <item
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/libs/jsoup-1.8.1.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/jsoup-1.8.1-38ee49efbcf2ec7faeb3f344b4cb6ae20e5995cf.jar" />
     </item>
     <item
         jar="/home/alejandro/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
@@ -23,32 +30,11 @@
         <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-57affa1df01f56818f0a39eaf1796fe81a19d834.jar" />
     </item>
     <item
-        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="22.0.0"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/classes-474200b8bb4d38c5cc0c253862dfe47e8c59a53e.jar" />
-    </item>
-    <item
-        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/libs/jsoup-1.8.1.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
-        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/jsoup-1.8.1-38ee49efbcf2ec7faeb3f344b4cb6ae20e5995cf.jar" />
-    </item>
-    <item
-        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/classes-302facbeb21d10619ae62879b25ef4dbc4136bcd.jar" />
-    </item>
-    <item
-        jar="/home/alejandro/workspace/Divisist/Division de Sistemas/libs/jsoup-1.8.1.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
-        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/jsoup-1.8.1-38ee49efbcf2ec7faeb3f344b4cb6ae20e5995cf.jar" />
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/alejandro/workspace/Divisist/Division de Sistemas/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-3bc3e1605087aa91020ab4a31f762383652d33c8.jar" />
     </item>
 
 </items>

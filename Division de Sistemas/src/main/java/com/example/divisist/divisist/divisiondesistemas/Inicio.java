@@ -71,6 +71,8 @@ public  class Inicio extends Activity {
     String urlMaterias ="http://divisist.ufps.edu.co/informacionacademica/materias.php";
     String urlHorario  = "http://divisist.ufps.edu.co/informacionacademica/horarios.php";
 
+    //Esta versión quedará como la versión final con codigo que no se usa, crearé otra versión más limpia
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -42,10 +42,10 @@ public class calculadora_notas extends Activity {
             @Override
             public void onClick(View view) {
 
-               pre1.setText("");
-               pre2.setText("");
-               pre3.setText("");
-               exa.setText("");
+                pre1.setText("");
+                pre2.setText("");
+                pre3.setText("");
+                exa.setText("");
             }
 
 
@@ -214,35 +214,35 @@ public class calculadora_notas extends Activity {
 
 
 
-public void calcularFinal(){
+    public void calcularFinal(){
 
-    try {
-        p1 = Double.valueOf(pre1.getText().toString());
-    }catch (Exception e){
-         p1=0.0;
-    }
-    try {
-        p2 = Double.valueOf(pre2.getText().toString());
-    }catch (Exception e){
-        p2=0.0;
-    }
-    try {
-        p3 = Double.valueOf(pre3.getText().toString());
-    }catch (Exception e){
-        p3=0.0;
-    }
+        try {
+            p1 = Double.valueOf(pre1.getText().toString());
+        }catch (Exception e){
+            p1=0.0;
+        }
+        try {
+            p2 = Double.valueOf(pre2.getText().toString());
+        }catch (Exception e){
+            p2=0.0;
+        }
+        try {
+            p3 = Double.valueOf(pre3.getText().toString());
+        }catch (Exception e){
+            p3=0.0;
+        }
 
-    try {
-        ex = Double.valueOf(exa.getText().toString());
-    }catch (Exception e){
-        ex=0.0;
-    }
+        try {
+            ex = Double.valueOf(exa.getText().toString());
+        }catch (Exception e){
+            ex=0.0;
+        }
 
-    double definitiva = (((this.p1+this.p2+this.p3)/3)*0.7+(this.ex*0.3));
+        double definitiva = (((this.p1+this.p2+this.p3)/3)*0.7+(this.ex*0.3));
 
 
 
-    this.def.setText(Double.toString(Math.round((definitiva)*100.00)/100.00));
+        this.def.setText(Double.toString(Math.round((definitiva)*100.00)/100.00));
 
     }
 
@@ -259,4 +259,3 @@ public void calcularFinal(){
         this.exa.setText(Double.toString(Math.round((ex)*100.00)/100.00));
     }
 }
-
