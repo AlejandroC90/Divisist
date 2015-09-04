@@ -24,7 +24,7 @@
         android:orientation="horizontal"
         android:background="@drawable/border">
         <TextView
-            android:text="Materia X"
+            android:text="Materia X - Def"
             android:textSize="20dp"
             android:paddingRight="10dp"
             android:maxWidth="300dp"
@@ -49,6 +49,7 @@
             android:textStyle="bold"
             android:gravity="right"
             android:layout_marginRight="20dp"
+            android:inputType="numberDecimal"
             android:layout_gravity="right"
             android:id="@+id/notaDef"
             android:maxLength="3"
@@ -93,13 +94,16 @@
                 android:layout_height="wrap_content"/>
             <EditText
                 android:text=""
+
                 android:textSize="20dp"
+                android:inputType="numberDecimal"
                 android:gravity="left"
                 android:layout_gravity="left"
                 android:id="@+id/notaPP"
                 android:maxLength="3"
                 android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
+                android:textAlignment="center"
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
@@ -126,8 +130,10 @@
                 android:gravity="left"
                 android:layout_gravity="left"
                 android:id="@+id/notaSP"
+                android:inputType="numberDecimal"
                 android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
+                android:textAlignment="center"
                 android:maxLength="3"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -151,11 +157,13 @@
                 android:text=""
                 android:gravity="left"
                 android:layout_gravity="left"
+                android:inputType="numberDecimal"
                 android:textSize="20dp"
                 android:id="@+id/notaTP"
                 android:maxLength="3"
                 android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
+                android:textAlignment="center"
                 android:layout_height="wrap_content"/>
 
 
@@ -179,6 +187,7 @@
                 android:layout_marginLeft="10dp"
                 android:gravity="left"
                 android:layout_gravity="left"
+                android:inputType="numberDecimal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -189,8 +198,10 @@
                 android:layout_marginLeft="10dp"
                 android:gravity="left"
                 android:maxLength="3"
+                android:inputType="numberDecimal"
                 android:layout_gravity="left"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
+                android:textAlignment="center"
                 android:layout_height="wrap_content"/>
 
 
