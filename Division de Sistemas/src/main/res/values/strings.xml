@@ -35,5 +35,14 @@
     <string name="def">Definitiva</string>
     <string name="reiniciar">Reiniciar</string>
     <string name="cerrar_session">Cerrar Sesión</string>
+    <string name="SesionCerrada">Sesión Cerrada</string>
+    <string name="Volver">Volver</string>
+
+    <string name="P1">PP</string>
+    <string name="P2">SP</string>
+    <string name="P3">TP</string>
+    <string name="EX">EX</string>
+    <string name="HA">HA</string>
+
 
 </resources>

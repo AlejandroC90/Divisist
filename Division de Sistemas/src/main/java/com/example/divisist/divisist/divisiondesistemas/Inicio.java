@@ -1,5 +1,7 @@
 package com.example.divisist.divisist.divisiondesistemas;
 
+
+/**Los imports necesarios para ejecutar la aplicación */
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -8,11 +10,9 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,175 +39,177 @@ import java.util.List;
  * VERSIÓN FINAL CON EL CÓDIGO FUNCIONANDO, TIENE CÓDIGO QUE NO USARÉ MÁS Y SERÁ BORRADO
  * TENDRÁ EL NOMBRE DE VERSIÓN 2.0
  *
- *
- *
  */
 
 public  class Inicio extends Activity {
 
-    //el botón de iniciar sesión
-    private  Button peticionPOST;
+    /**Declaro todos los componentes de la interfaz, Botones, Cuadros de Texto, también las variables que uso
+     * para almacenar la información.
+     */
 
-    //los cuadros de texto donde se escriben los datos
+    /** el botón de iniciar sesión */
+    private  Button iniciarSesion;
+
+    /**los cuadros de texto donde se escriben los datos*/
     private EditText textoCodigo;
     private EditText textoContraseña;
 
-    //los datos del estudiante que son necesarios para iniciar sesión
+    /**los datos del estudiante que son necesarios para iniciar sesión*/
     private String codigo = "codigo";
     private String valorcodigo;
     private String contraseña="clave";
     private String valorcontraseña;
 
 
-    //Strings que uso para almacenar la información del estudiante para luego ser enviada a Información
+    /**Strings que uso para almacenar la información del estudiante para luego ser enviada a la clase Información*/
     private String nombreEstudiante;
     private String codigoEstudiante;
     private String TablaMaterias;
     public String tablaHorario;
-    public  String paginaWebdeNotas;
+    public String paginaWebdeNotas;
     public String paginaWebdeHorario;
 
+
+    /**Dialogo que muestra el "Iniciando Sesión" */
     private ProgressDialog cargando;
     private Context context;
 
-    private Toolbar toolbar;
 
-
-
-    //la URL a la que se conecta la app
+    /**las URLs a la que se conecta la app: Divisist, Materias, Horarios*/
     String urlDivisist ="http://divisist.ufps.edu.co/index.php";
     String urlMaterias ="http://divisist.ufps.edu.co/informacionacademica/materias.php";
     String urlHorario  = "http://divisist.ufps.edu.co/informacionacademica/horarios.php";
 
 
-
+    /**
+     * Método propio de Android
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+
+        /**Se le pone el layout que quiero mostrar en la pantalla de inicio, en este caso el de inicio de sesión */
         setContentView(R.layout.activity_inicio);
 
-
+        /**Contexto de la aplicación, lo que se muestra ahora*/
         context = this;
-        //inicializo los datos del estudiante
+
+        /**INICIALIZACIÓN DE LO QUE DECLARÉ MÁS ARRIBA, STRINGS, BOTOENES, CUADROS DE TEXTO*/
+
+        /**inicializo los datos del estudiante*/
         this.paginaWebdeNotas ="";
         this.valorcodigo="";
         this.valorcontraseña="";
 
 
+        /** Botón de iniciar sesión*/
+        this.iniciarSesion = (Button) findViewById(R.id.peticionPOST);
 
-
-        //inicializo el botón de iniciar sesión
-        this.peticionPOST = (Button) findViewById(R.id.peticionPOST);
-
-        //inicializo los cuadros de texto de codigo y contraseña
+        /**inicializo los cuadros de texto de codigo y contraseña*/
         this.textoCodigo=(EditText)findViewById(R.id.codigo);
         this.textoContraseña =(EditText)findViewById(R.id.contraseña);
 
-        //permite que el teclado no se ponga encima de los cuadros de contraseña y usuario
+        /**permite que el teclado no se ponga encima de los cuadros de contraseña y usuario cuando el usuario esté
+         * digitando la información
+         */
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
 
+        /**En esta condición confirmo que no hayan datos guardados en la aplicación, si los hay se inicia sesión
+         * automáticamente
+         */
+            if(hayDatos()){
 
-        //condición que permite saber si el usuario tiene guardados sus datos en la aplicación
-        if(hayDatos()){
-
-            //si se cumple la condición anterior entonces desactivo los botones
-            peticionPOST.setEnabled(false);
-            peticionPOST.setClickable(false);
+            /**si se cumple la condición anterior entonces desactivo los botones*/
+            iniciarSesion.setEnabled(false);
+            iniciarSesion.setClickable(false);
             textoCodigo.setEnabled(false);
             textoContraseña.setEnabled(false);
 
 
-            //como hay datos guardados, simplemente los busco donde deberían estar guardados
+            /**como hay datos guardados, simplemente los busco donde deberían estar guardados
+             * y se los paso a las variables
+             * */
             SharedPreferences settings = getSharedPreferences("datos", 0);
             valorcodigo = settings.getString("codigo","").toString();
             valorcontraseña = settings.getString("contraseña","").toString();
 
-            //por ultimo ejecuto el hilo de buscar las Notas
-            BuscarNotas notasaqui2 = new BuscarNotas(Inicio.this);
-            notasaqui2.execute();
-
-
-
-
-           //luego se inicia la actividad con la Información, normalmente
-
+            /**por ultimo ejecuto el hilo de buscar las Notas, el hilo envía o inicia la siguiente
+             * actividad
+             * */
+            BuscarNotas irPorLasNotas = new BuscarNotas(Inicio.this);
+            irPorLasNotas.execute();
         }
 
 
-
-        //el método que se ejecuta cuando el ususario presiona el boton de iniciar sesión
-       this.peticionPOST.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //nuevamente desactivo los botones mientras se buscan las notas
-                peticionPOST.setEnabled(false);
-                textoContraseña.setEnabled(false);
-                textoCodigo.setEnabled(false);
-
-                //tomo los datos digitados por el usuario
-                valorcodigo = textoCodigo.getText().toString();
-                valorcontraseña = textoContraseña.getText().toString();
+        /**Método que escucha al botón de iniciar, espera el click
+         *
+         */
 
 
-                //pongo en blanco pagina web
-                paginaWebdeNotas ="";
+       this.iniciarSesion.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
 
-                //reviso que en los cuadros de texto no haya ningún valor en blanco
-                //falta revisar que el codigo tenga un tamaño fijo y la contraseña también
-                if(valorcontraseña.isEmpty()||valorcodigo.isEmpty()){
+               /**Se desactivan los cuadros de texto y/o botones*/
+               iniciarSesion.setEnabled(false);
+               textoContraseña.setEnabled(false);
+               textoCodigo.setEnabled(false);
 
-                    Toast.makeText(getApplicationContext(), R.string.espacio_vacio, Toast.LENGTH_SHORT).show();
-
-                    //como hay un espacio vacio o el codigo no esta completo vuelvo a activar los botones y me regreso
-                    peticionPOST.setEnabled(true);
-                    textoContraseña.setEnabled(true);
-                    textoCodigo.setEnabled(true);
-
-                    return;
-                }
-
-                //se crea un objeto de la clase que consulta las notas y se ejecuta
-
-                try {
-                    BuscarNotas notasaqui = new BuscarNotas(Inicio.this);
-                    notasaqui.execute();
-                    //notasaqui.get(20000, TimeUnit.MILLISECONDS);
-
-                }catch (Exception e){
-                    // si se produce un error en la busqueda de las notas, se vuelven a activar los botones para que el usuario pueda reintentar
-                    peticionPOST.setEnabled(true);
-                    textoContraseña.setEnabled(true);
-                    textoCodigo.setEnabled(true);
-                    Toast.makeText(getApplicationContext(), R.string.error_app, Toast.LENGTH_SHORT).show();
-
-                    return;
-
-                }
-
-     //Este es el delay que usaba para predecir el tiempo en el que se demoraria en conultar las notas
-        /**   new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent i;
-                        i = new Intent(Inicio.this,Informacion.class);
-                        i.putExtra("pagina", paginaWebdeNotas);
-                        i.putExtra("codigo", valorcodigo);
-                        i.putExtra("contraseña", valorcontraseña);
-
-                        startActivity(i);
-
-                    }
-                }, 20000);
+               /**Capturo la información ingresada por el usuario */
+               valorcodigo = textoCodigo.getText().toString();
+               valorcontraseña = textoContraseña.getText().toString();
 
 
+              /**Inicializo la página web completamente vacía */
+               paginaWebdeNotas = "";
 
-*/
+               /**Reviso que la información ingresada no sea nula
+                *Aún no se revisa si la información es correcta, tamaño del codigo y contraseña sean correctos
+                * igualmente no se podrá inicial sesión si la información no es correcta
+                *
+                */
+               if (valorcontraseña.isEmpty() || valorcodigo.isEmpty()) {
 
-            }
-        });
+                   Toast.makeText(getApplicationContext(), R.string.espacio_vacio, Toast.LENGTH_SHORT).show();
+
+                   /**Como ha encontrado espacios vacíos, se procede a regresar al usuario*/
+                   iniciarSesion.setEnabled(true);
+                   textoContraseña.setEnabled(true);
+                   textoCodigo.setEnabled(true);
+
+                   return;
+               }
+
+
+               /**Si se ha llegado hasta aquí, quiere decir la información es relativamente correcta
+                * se procede a iniciar sesión normalmente, se pone dentro de una excepción en caso de que ocurran
+                * errores
+                */
+
+               try {
+                   BuscarNotas irPorLasNotas = new BuscarNotas(Inicio.this);
+                   irPorLasNotas.execute();
+
+               } catch (Exception e) {
+                   /** En el caso de que se produzca un error, es captura por la excepción, y se hace retornar al usuario
+                    *
+                    */
+                   iniciarSesion.setEnabled(true);
+                   textoContraseña.setEnabled(true);
+                   textoCodigo.setEnabled(true);
+                   /**Mostramos el error */
+                   Toast.makeText(getApplicationContext(), R.string.error_app, Toast.LENGTH_SHORT).show();
+
+                   return;
+
+               }
+
+
+           }
+       });
 
 
 
@@ -217,33 +219,34 @@ public  class Inicio extends Activity {
     }
 
 
-    //el onpause se llama cuando el usuario pausa la actividad al ver notificaciones o recibir una llamada, etc...
+    /**
+     * El onpause se llama cuando el usuario pausa la actividad al ver notificaciones o recibir una llamada, etc...
+     */
     public void onPause() {
       super.onPause();
     }
 
+    /**
+     * Metodo que se llama en el oncreate
+     */
 
-    //metodo que se llama en el oncreate
     public void onResume(){
         super.onResume();
-
-
     }
 
-    //el onstop se llama cuando la actividad ya no se encuentra visible para el usuario
+    /**
+     * El onstop se llama cuando la actividad ya no se encuentra visible para el usuario
+     */
     public void onStop(){
-
         super.onStop();
-
-
-
-
     }
 
-    //el onstart se llama cuando el usuario llama la actividad del onStop y la vuelve a mostrar
+    /**
+     * El onstart se llama cuando el usuario llama la actividad del onStop y la vuelve a mostrar
+     */
     public void onRestart(){
         super.onRestart();
-        peticionPOST.setEnabled(true);
+        iniciarSesion.setEnabled(true);
         textoCodigo.setEnabled(true);
         textoContraseña.setEnabled(true);
         textoCodigo.setText("");
@@ -252,18 +255,21 @@ public  class Inicio extends Activity {
     }
 
 
-    //metodo que infla el menu, en este caso, es el menu inicio
+    /**Método que pone el menú en el layout
+     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
+         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.inicio, menu);
         return true;
     }
 
 
-
-    //método que le dice qué hacer en caso de que se presione x item en el menu
+    /**Método que controla el comportamiento del menú del layout inicializado arriba
+     *
+     * @param item
+     * @return
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
@@ -281,78 +287,79 @@ public  class Inicio extends Activity {
     }
 
 
-    //Creación de un hilo de ejecución mediante Asynctask de android
+
+
+    /**Al ser una consulta de uso web, se ejecuta en otro hilo para prevenir el congelamiento de la interaz
+     * Creación de un hilo de ejecución mediante Asynctask de android
+     */
     private class BuscarNotas extends AsyncTask<Void, Void, Void> {
 
         public BuscarNotas(Activity activity) {
-
-
-
         }
 
-        //metodo de asynctask que se ejecuta antes de empezar el trabajo del hilo, en este caso, muestro la notificacion
+        /**metodo de asynctask que se ejecuta antes de empezar el trabajo del hilo, en este caso
+         * muestro la ventana de Iniciando Sesión
+         */
+
         protected void onPreExecute() {
-
-
           //  setProgressBarIndeterminateVisibility(true);
-
             cargando = new ProgressDialog(context);
             cargando.setTitle(R.string.iniciando_sesion);
-
             cargando.setMessage("Por favor espere");
             cargando.setCancelable(false);
             cargando.setIndeterminate(true);
             cargando.show();
-
             //Toast.makeText(getApplicationContext(), R.string.iniciando_sesion, Toast.LENGTH_SHORT).show();
-
-
         }
 
-        //la actividad principal de hilo, en este caso, enviar las peticiones y tomar la tabla de materias
+        /**
+        *la actividad principal de hilo, en este caso, enviar las peticiones y tomar la tabla de materias
+         */
         @Override
         protected Void doInBackground(Void... voids) {
-
             //se llama el metodo de peticion post y get
            peticionPostyGet();
-
            return null;
         }
 
-        //metodo que se llama despues que se ejecuta el hilo
+        /**metodo que se llama despues que se ejecuta el hilo
+         *
+         * @param a
+         */
         protected void onPostExecute(Void a) {
-
           //  setProgressBarIndeterminateVisibility(false);
-
-            //se toma la pagina web y se sacan las notas
-
+            /**se toma la pagina web y se sacan las notas, en el caso de que se produzcan errores, se muestra
+             * el toast y se regresa al usuario
+             *
+             */
             try {
                  sacarNombreNotas();
             }catch (Exception e){
-
                 Toast.makeText(getApplicationContext(), R.string.error_app, Toast.LENGTH_SHORT).show();
-
-                peticionPOST.setEnabled(true);
+                iniciarSesion.setEnabled(true);
                 textoCodigo.setEnabled(true);
                 textoContraseña.setEnabled(true);
                 cargando.dismiss();
-
                 return;
             }
 
-
             if(nombreEstudiante==null||nombreEstudiante.equals("")){
                 Toast.makeText(getApplicationContext(), R.string.error_app, Toast.LENGTH_SHORT).show();
-                peticionPOST.setEnabled(true);
+                iniciarSesion.setEnabled(true);
                 textoCodigo.setEnabled(true);
                 textoContraseña.setEnabled(true);
                 valorcodigo="";
                 valorcontraseña="";
                 cargando.dismiss();
-
                 return;
             }
 
+            /**
+             * En el caso de que no se produzca ningún problema tomando la información: tomando notas
+             * y horario, se procede a iniciar la siguiente ventana, en la cual se muestra, el dialogo se borra
+             * de la pantalla.
+             * También se le envía la información a la otra interfaz
+             */
 
             Intent notas = new Intent();
             notas.setClass(getApplicationContext(), InformacionenPestanas.class);
@@ -362,29 +369,23 @@ public  class Inicio extends Activity {
             notas.putExtra("contraseña",valorcontraseña);
             notas.putExtra("horario", tablaHorario);
             startActivity(notas);
-
             cargando.dismiss();
 
         }
     }
 
-
-
-    //peticion Post Y Get que permite iniciar sesión para tomar la tabla de materias y horario
+    /**El corazón de la aplicación:
+     * Peticion Post Y Get que permite iniciar sesión para tomar la tabla de materias y horario
+     * los resultados se le ponen a las variables
+     * */
     public void peticionPostyGet(){
-
         HttpClient httpclient = new DefaultHttpClient();
-
-
         String html;
-
         try{
             HttpPost httpost = new HttpPost(urlDivisist);
-
             List<NameValuePair> nvps = new ArrayList<NameValuePair>();
             nvps.add(new BasicNameValuePair(codigo, valorcodigo));
             nvps.add(new BasicNameValuePair(contraseña,valorcontraseña));
-
             httpost.setEntity(new UrlEncodedFormEntity(nvps, HTTP.UTF_8));
             HttpResponse response = httpclient.execute(httpost);
             HttpEntity entity = response.getEntity();
@@ -395,10 +396,8 @@ public  class Inicio extends Activity {
             e.printStackTrace();
             // Tratar excepción!!!
         }
-
         //aqui empieza a tomar la tabla de materias matriculadas
         String html2="";
-
         try{
             HttpGet httpget = new HttpGet(urlMaterias);
             HttpResponse response = httpclient.execute(httpget);
@@ -409,14 +408,9 @@ public  class Inicio extends Activity {
 
        } catch(Exception e){
             e.printStackTrace();
-
-
             // Tratar excepción!!!
         }
         paginaWebdeNotas=html2;
-
-
-
         //aqui empieza a tomar la tabla del horario
         String html3="";
 
@@ -439,6 +433,11 @@ public  class Inicio extends Activity {
 
     }
 
+    /**
+     * Método usado por las peticiones Post y Get, recibe el contenido de la página para convertirlo a string
+     * @param br
+     * @return
+     */
     private String readFromBuffer(BufferedReader br){
         StringBuilder text = new StringBuilder();
         try{
@@ -455,7 +454,9 @@ public  class Inicio extends Activity {
     }
 
 
-    //metodo que saca el Nombre y las Notas de las Materias del Estudiante
+    /**Metodo que tomael Nombre y las Notas de las Materias del Estudiante
+     *
+     */
     public void sacarNombreNotas(){
 
 
@@ -465,63 +466,62 @@ public  class Inicio extends Activity {
         tablaHorario  = tabladeHorarios();
      }
 
+    /**
+     * Método que toma la tabla de Horario del html puro
+     *
+     * @return regresa una página web con solo una tabla, la tabla del horario
+     */
     public String tabladeHorarios(){
-
         int inicio = paginaWebdeHorario.indexOf("LUNES");
         int fin = paginaWebdeHorario.indexOf("22");
         this.cambiarTamañoTabla();
-
-
         return "<html> <head> <LINK REL=\"StyleSheet\" HREF=\"http://divisist.ufps.edu.co/hojas_estilo/hoja_estilo.css\" TYPE=\"text/css\"> <link href=\"http://divisist.ufps.edu.co/hojas_estilo/estilosnuevos.css\" rel=\"stylesheet\" type=\"text/css\"></head>" +  paginaWebdeHorario.substring(inicio-277,fin+341) + "</html>";
     }
 
-    //metodo que toma precisamente la tabla que contiene las materias matriculadas por el estudiante
+    /**Método que toma precisamente la tabla que contiene las materias matriculadas por el estudiante
+     * usa métodos de la clase String para saber de donde a dónde empezar
+     * @return una página web con la tabla de las Materias Matriculadas
+     */
     public String tabladeMaterias(){
-
-
         int inicio = paginaWebdeNotas.indexOf("MATERIAS MATRICULADAS");
         int fin = paginaWebdeNotas.indexOf("400");
-
         this.cambiarTamañoTabla();
-
-
         return "<html> <head><link href=\"http://divisist.ufps.edu.co/hojas_estilo/estilosnuevos.css\" rel=\"stylesheet\" type=\"text/css\"></head>" +  paginaWebdeNotas.substring(inicio-228,fin-81) + "</html>";
-
         //   return this.html;
-//return html.substring(inicio-238,fin-53);
-// return html.substring(inicio-228,fin-81);
+        //return html.substring(inicio-238,fin-53);
+        // return html.substring(inicio-228,fin-81);
     }
 
+    /**Método que cambia el tamaño de la tabla de las materias matriculadas, lo cual permite que ocupe todo el espacio
+     * del teléfono
+     */
     public void cambiarTamañoTabla(){
-
         this.paginaWebdeNotas = paginaWebdeNotas.replaceAll("600","100%");
         this.paginaWebdeHorario =paginaWebdeHorario.replaceAll("700","100%");
-
     }
 
+    /**Método que toma el nombre del estudiante
+     *
+      * @return un String con el primer nombre y primer apellido del estudiante
+     * el nombre aparece al revés en divisist, el método lo invierte automáticamente.
+     */
     public String nombre () {
         int i = 1799;
         int j = 1799;
         boolean finalNombre=false;
         char a=' ';
        // return paginaWebdeNotas.substring(i,j);
-
-
      while(finalNombre!=true){
-
             a = paginaWebdeNotas.charAt(j);
             if(String.valueOf(a).equalsIgnoreCase("<")){
                 finalNombre = true;
             }
             j++;
         }
-
-
-
         return invertirNombre(paginaWebdeNotas.substring(i, j - 1));
-
     }
 
+    /**Invierte un nombre de cuatro posiciones */
     public String invertirNombre(String nombreinvertido){
         String nombre = nombreinvertido;
         String separador = "[ ]";
@@ -531,24 +531,19 @@ public  class Inicio extends Activity {
 
 
     }
-    public boolean hayDatos(){
 
+    /**Método que permite comprobar que haya información o no almancenada del estudiante, si la hay
+     * será usada para iniciar sesión automáticamente
+     * @return el valor de si hay o no notas
+     */
+    public boolean hayDatos(){
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
-
         boolean guardarD = sharedPreferences
                 .getBoolean("guardar_datos", false);
-
         if(guardarD) {
             return true;
         }
-
         return false;
     }
-
-
-
-
-
-
 }

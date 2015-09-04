@@ -24,4 +24,5 @@
     <string name="notas">Notes</string>
     <string name="horario">Horario</string>
     <string name="cerrar_session">Log out</string>
+    <string name="SesionCerrada">Logged out</string>
 </resources>

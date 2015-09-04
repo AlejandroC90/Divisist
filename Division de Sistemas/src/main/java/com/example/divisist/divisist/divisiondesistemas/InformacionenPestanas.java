@@ -32,17 +32,17 @@ import org.jsoup.select.Elements;
 
 /**
  * Created by alejandro on 4/7/15.
+ *
+ * CLASE QUE MUESTRA LAS NOTAS Y EL HORARIO EN DOS PESTAÑAS DIFERENTES, HACE DE USO DE FRAGMENTS
+ *
  */
 public class InformacionenPestanas extends FragmentActivity implements ActionBar.TabListener {
 
-
-
+    /**Inicializo los String necesarios */
     public static String tablaN;
     private static String tablaHorario;
-
     private String nombreEs;
     private String codigoEs;
-
 
     AppSectionsPagerAdapter mAppSectionsPagerAdapter;
 
@@ -56,8 +56,6 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actividad_tabs);
-
-
 
         Bundle bundle = getIntent().getExtras();
         this.tablaN = bundle.getString("pagina");
@@ -117,7 +115,9 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
         return true;
     }
 
-
+    /**
+     * Metódo propio de Android
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -133,7 +133,11 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
 
     }
 
-
+    /**
+     * Método que hace acciones dependiendo de lo que se seleccione en Opciones
+     * @param item
+     * @return
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
@@ -141,25 +145,19 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
                 Intent i = new Intent(this,acerca_de.class);
                 startActivity(i);
                 return true;
-
             case R.id.action_search:
                 Intent j = new Intent(this,Configuraciones.class);
                 startActivity(j);
                 return true;
-
             case R.id.cerrar:
-                Toast.makeText(getApplicationContext(), "Sesión Cerrada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.SesionCerrada, Toast.LENGTH_SHORT).show();
                 this.finish();
-
                 return true;
-
-
             case R.id.Cal:
                 Intent k = new Intent(this,calculadora_notas.class);
                 startActivity(k);
                 return true;
         }
-
         return false;
     }
 

@@ -22,23 +22,24 @@ public class calculadora_notas extends Activity {
     double de = 0;
 
     private EditText pre1,pre2,pre3,exa,def;
-    private Button reini;
+    private Button reini, volver;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculadora_notas);
+        setContentView(R.layout.calculadora_notas_nueva);
 
-        this.pre1 = (EditText)findViewById(R.id.editText);
-        this.pre2 = (EditText)findViewById(R.id.editText2);
-        this.pre3 = (EditText)findViewById(R.id.editText3);
-        this.exa = (EditText)findViewById(R.id.editText4);
+        this.pre1 = (EditText)findViewById(R.id.notaPP);
+        this.pre2 = (EditText)findViewById(R.id.notaSP);
+        this.pre3 = (EditText)findViewById(R.id.notaTP);
+        this.exa = (EditText)findViewById(R.id.notaEX);
 
         this.reini = (Button) findViewById(R.id.reiniciar);
+        this.volver = (Button) findViewById(R.id.volver);
 
-        this.def = (EditText)findViewById(R.id.editText5);
+        this.def = (EditText)findViewById(R.id.notaDef);
         this.calcularFinal();
 
-        this.reini.setOnClickListener(new View.OnClickListener(){
+        this.reini.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -49,9 +50,18 @@ public class calculadora_notas extends Activity {
             }
 
 
-
         });
 
+        this.volver.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                finish();
+            }
+
+
+
+        });
         pre1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
