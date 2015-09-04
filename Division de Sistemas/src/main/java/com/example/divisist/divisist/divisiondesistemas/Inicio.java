@@ -35,6 +35,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+//VERSION LIMPIA Y DOCUMENTADA DE LA APLICACIÓN
+
 public  class Inicio extends Activity {
 
     //el botón de iniciar sesión
@@ -71,7 +73,7 @@ public  class Inicio extends Activity {
     String urlMaterias ="http://divisist.ufps.edu.co/informacionacademica/materias.php";
     String urlHorario  = "http://divisist.ufps.edu.co/informacionacademica/horarios.php";
 
-    //Esta versión quedará como la versión final con codigo que no se usa, crearé otra versión más limpia
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
