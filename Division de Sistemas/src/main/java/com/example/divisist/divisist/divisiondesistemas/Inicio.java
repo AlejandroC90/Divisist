@@ -35,7 +35,13 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-//VERSION LIMPIA Y DOCUMENTADA DE LA APLICACIÓN
+/**
+ * VERSIÓN FINAL CON TODO EL CÓDIGO FUNCIONANDO, TIENE CÓDIGO QUE NO USARÉ MÁS Y SERÁ BORRADO
+ * LA NUEVA VERSIÓN SE VERÁ REFLEJADA EN LA RAMA "master"
+ *
+ *
+ *
+ */
 
 public  class Inicio extends Activity {
 
