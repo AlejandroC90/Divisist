@@ -4,6 +4,7 @@
 	<item
 		android:state_pressed="true"
 		android:drawable="@drawable/layer_card_background_selected" />
+	<corners android:radius="2dp"/>
 
 	<item android:drawable="@drawable/layer_card_background" />
 </selector>

@@ -4,8 +4,10 @@ repositories {
     mavenCentral()
 }
 android {
-    compileSdkVersion 21
+    compileSdkVersion 23
     buildToolsVersion '22.0.0'
+    useLibrary 'org.apache.http.legacy'
+
 
     defaultConfig {
         minSdkVersion 14

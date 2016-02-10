@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ノート UFPS</string>
+    <string name="About"></string>
+    <string name="iniciar_sesion">ロギング</string>
+    <string name="hint_codigo">コード</string>
+    <string name="hint_contrasena">パスワード</string>
+</resources>

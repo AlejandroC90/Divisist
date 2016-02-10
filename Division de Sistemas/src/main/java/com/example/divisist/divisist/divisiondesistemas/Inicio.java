@@ -35,6 +35,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.divisist.divisist.divisiondesistemas.R.string.espere;
+
 /**
  * VERSIÓN FINAL CON EL CÓDIGO FUNCIONANDO, TIENE CÓDIGO QUE NO USARÉ MÁS Y SERÁ BORRADO
  * TENDRÁ EL NOMBRE DE VERSIÓN 2.0
@@ -79,6 +81,7 @@ public  class Inicio extends Activity {
     String urlDivisist ="http://divisist.ufps.edu.co/index.php";
     String urlMaterias ="http://divisist.ufps.edu.co/informacionacademica/materias.php";
     String urlHorario  = "http://divisist.ufps.edu.co/informacionacademica/horarios.php";
+    String espere = String.valueOf(R.string.espere);
 
 
     /**
@@ -305,7 +308,7 @@ public  class Inicio extends Activity {
           //  setProgressBarIndeterminateVisibility(true);
             cargando = new ProgressDialog(context);
             cargando.setTitle(R.string.iniciando_sesion);
-            cargando.setMessage("Por favor espere");
+            cargando.setMessage(getResources().getString(R.string.espere));
             cargando.setCancelable(false);
             cargando.setIndeterminate(true);
             cargando.show();
@@ -485,8 +488,17 @@ public  class Inicio extends Activity {
     public String tabladeMaterias(){
         int inicio = paginaWebdeNotas.indexOf("MATERIAS MATRICULADAS");
         int fin = paginaWebdeNotas.indexOf("400");
-        this.cambiarTamañoTabla();
-        return "<html> <head><link href=\"http://divisist.ufps.edu.co/hojas_estilo/estilosnuevos.css\" rel=\"stylesheet\" type=\"text/css\"></head>" +  paginaWebdeNotas.substring(inicio-228,fin-81) + "</html>";
+       // this.cambiarTamañoTabla();
+        try {
+            return "<html> <head><link href=\"http://divisist.ufps.edu.co/hojas_estilo/estilosnuevos.css\" rel=\"stylesheet\" type=\"text/css\"></head>" + paginaWebdeNotas.substring(inicio - 228, fin - 81) + "</html>";
+        }catch (Exception e
+                ){
+            return "<html> <head><link href=\"http://divisist.ufps.edu.co/hojas_estilo/estilosnuevos.css\" rel=\"stylesheet\" type=\"text/css\"></head>" + paginaWebdeNotas.substring(inicio - 228, paginaWebdeNotas.length()) + "</html>";
+
+        }
+
+        //return "<html> <head><link href=\"http://divisist.ufps.edu.co/hojas_estilo/estilosnuevos.css\" rel=\"stylesheet\" type=\"text/css\"></head></html>";
+
         //   return this.html;
         //return html.substring(inicio-238,fin-53);
         // return html.substring(inicio-228,fin-81);
@@ -497,6 +509,8 @@ public  class Inicio extends Activity {
      */
     public void cambiarTamañoTabla(){
         this.paginaWebdeNotas = paginaWebdeNotas.replaceAll("600","100%");
+
+
         this.paginaWebdeHorario =paginaWebdeHorario.replaceAll("700","100%");
     }
 

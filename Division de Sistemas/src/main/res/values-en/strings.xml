@@ -22,7 +22,15 @@
     <string name="espacio_vacio">Empty space, can\'t continue</string>
     <string name="iniciando_sesion">Logging in</string>
     <string name="notas">Notes</string>
-    <string name="horario">Horario</string>
+    <string name="horario">Schedule</string>
     <string name="cerrar_session">Log out</string>
     <string name="SesionCerrada">Logged out</string>
+    <string name="porfavorespere">Please wait...</string>
+    <string name="Volver">Back</string>
+    <string name="EX">EX</string>
+    <string name="HA">HA</string>
+    <string name="P1">FE</string>
+    <string name="P2">SE</string>
+    <string name="P3">TE</string>
+    <string name="espere">Please wait....</string>
 </resources>

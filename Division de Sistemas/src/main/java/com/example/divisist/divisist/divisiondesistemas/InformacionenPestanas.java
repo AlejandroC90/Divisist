@@ -59,6 +59,7 @@ public class InformacionenPestanas extends FragmentActivity implements ActionBar
 
         Bundle bundle = getIntent().getExtras();
         this.tablaN = bundle.getString("pagina");
+        this.tablaN = tablaN.replace('?','Ñ');
         this.tablaHorario = bundle.getString("horario");
         this.nombreEs = bundle.getString("nombre");
         this.codigoEs = bundle.getString("codigo");
